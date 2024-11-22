@@ -75,16 +75,14 @@ public class Algebra {
 
 	// Returns x^n (for n >= 0)
 	public static int pow(int x, int n) {
-
 		if (n == 0) return 1;
-		x = (x < 0) ? minus(0, x) : x; 
+		int x1 = x;
+		if (x < 0) {
+			x1 = minus(0, x1);
+		}
 		int power = 1;
 		for (int i = 0; i<n; i++){
-			power = times(power, x);
-		}
-		if (x < 0 && mod(n, 2) != 0) {
-			power =  minus(0, power);
-
+			power = times(power, x1);
 		}
 		if (x < 0 && mod(n, 2) != 0){
 			power = minus(0, power);
@@ -126,11 +124,11 @@ public class Algebra {
 		if (x < 0) throw new ArithmeticException("Square root of negative number");
 		int result = 0;
 		int i = 0;
-		while (result < x) {
+		while (result <= x) {
 			i++;
 			result = times(i, i);
 		}
-		return i;
+		return i--;
 	}	  	  
 }
 // java Algebra.java 
