@@ -30,6 +30,8 @@ public class Algebra {
    		System.out.println(sqrt(36));
 		System.out.println(sqrt(263169));
    		System.out.println(sqrt(76123));
+		System.out.println(sqrt(0));
+		System.out.println(sqrt(1));
 	}  
 
 	// Returns x1 + x2
@@ -50,16 +52,6 @@ public class Algebra {
 	// Returns x1 - x2
 	public static int minus(int x1, int x2) {
 		return plus(x1, -x2);
-		// int diff = x1;
-		// if(x2 >0)
-		// 	for (int i = 0; i<x2; i++){
-		// 	diff = diff - 1;
-		// }
-		// else
-		// for (int i = 0; i>x2; i--){
-		// 	diff = diff + 1;
-		// }
-		// return diff;
 	}
 
 	// Returns x1 * x2
@@ -133,7 +125,7 @@ public class Algebra {
 	public static int sqrt(int x) {
 		if (x < 0) throw new ArithmeticException("Square root of negative number");
 		int result = 0;
-		int i = -1;
+		int i = 0;
 		while (result < x) {
 			i++;
 			result = times(i, i);
