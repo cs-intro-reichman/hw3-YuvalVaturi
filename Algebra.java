@@ -124,11 +124,11 @@ public class Algebra {
 		if (x < 0) throw new ArithmeticException("Square root of negative number");
 		int result = 0;
 		int i = 0;
-		while (result < x) {
+		while (result <= x) {
 			i++;
 			result = times(i, i);
 		}
-		return i;
+		return minus(i, 1);
 	}	  	  
 }
 // java Algebra.java 

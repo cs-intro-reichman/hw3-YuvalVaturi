@@ -54,6 +54,9 @@ public class Anagram {
 	   
 	public static String randomAnagram(String str) {
 		char[] chars = str.toCharArray();
+		if (str == null || str.isEmpty()) {
+			return "";
+		}
 		for (int i = 0; i<chars.length; i++){
 			int j = (int) (Math.random() * chars.length);
 			char temp = chars[i];
