@@ -52,7 +52,7 @@ public class LoanCalc {
 		double low = (double) loan/n;
 		double high = (double) loan;
 		double g = (double) (high+low)/2;
-		System.out.println("low is: " + low + " high is: " + high);
+		// System.out.println("low is: " + low + " high is: " + high);
 		while ((high - low) > epsilon){
 			if ((endBalance(loan, rate, n, g)*endBalance(loan, rate, n, low)) > 0){
 				low = g;
