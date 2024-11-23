@@ -47,7 +47,7 @@ public class Anagram {
 	   
 	
 	public static String preProcess(String str) {
-		str = str.replaceAll("[^a-zA-Z]", "");
+		str = str.replaceAll("[^a-zA-Z ]", "");
 		str = str.toLowerCase();
 		return str;
 	} 
