@@ -28,6 +28,13 @@ public class LoanCalc {
 	//(last payment - period) * (1 + rate/100)
 	private static double endBalance(double loan, double rate, int n, double payment) {	
 		double balance = loan;
+		if (rate == 0) {
+			for (int i = 0; i < n; i++) {
+				balance -= payment;
+			}
+			return balance;
+		}
+		
 		for (int i = 0; i<n; i++){
 			balance = ((balance - payment)*(1 + rate/100));
 			// System.out.println("end balance no " + i + ": " + balance);

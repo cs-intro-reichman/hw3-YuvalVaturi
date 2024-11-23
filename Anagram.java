@@ -33,19 +33,13 @@ public class Anagram {
 		if (str1.length() != str2.length()) {
 			return false;
 		}
-		// for (char c : str1.toCharArray()) {
-		// 	if (str2.indexOf(c) == -1) {
-		// 		return false;
-		// 	}
-		// 	str2 = str2.replaceFirst(Character.toString(c), "");
-		// }
+		StringBuilder newstr2 = new StringBuilder(str2);
 		for (char c : str1.toCharArray()) {
-			int i = str2.indexOf(c);
+			int i = newstr2.indexOf(Character.toString(c));
 			if (i == -1) {
 				return false;
 			}
-			str2 = (str2.substring(0, i) + str2.substring(i + 1));
-		
+			newstr2.deleteCharAt(i);
 		}
 	
 		return true;
@@ -53,7 +47,7 @@ public class Anagram {
 	   
 	
 	public static String preProcess(String str) {
-		str = str.replaceAll("[^a-zA-Z ]", "");
+		str = str.replaceAll("[^a-zA-Z]", "");
 		str = str.toLowerCase();
 		return str;
 	} 
