@@ -77,4 +77,4 @@ public class LoanCalc {
 }
 
 // java LoanCalc.java 100000 5 10 
-// java LoanCalc.java 100000 5 10 
+// java LoanCalc.java 100000 5 1
